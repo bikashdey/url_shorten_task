@@ -1,0 +1,41 @@
+---
+openapi: 3.0.1
+info:
+  title: API V1
+  version: v1
+paths:
+  "/api/v1/create_shorten_url":
+    post:
+      summary: Create or retrieve a shortened URL
+      tags:
+      - URL Shortener API
+      parameters:
+      - name: Authorization
+        in: header
+        required: true
+        description: API Token
+        schema:
+          type: string
+      responses:
+        '200':
+          description: New URL shortened successfully
+        '401':
+          description: Unauthorized request
+        '422':
+          description: Validation error
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                original_url:
+                  type: string
+                  example: https://example.com
+              required:
+              - original_url
+servers:
+- url: https://{defaultHost}
+  variables:
+    defaultHost:
+      default: www.example.com

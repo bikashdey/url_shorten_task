@@ -1,0 +1,1 @@
+Rails.application.config.api_token = 'eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE3MzMzODgzODZ9.Kr3OsfzYT5sPtg6n79hEb5GLvAQPQlYEb14hDdkRdFs'

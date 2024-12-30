@@ -1,0 +1,26 @@
+<h1>URL Shortener</h1>
+
+<%= form_with model: @url, url: urls_path, local: true, data: { turbo: false } do |form| %>
+  <div>
+    <%= form.label :original_url, "Enter a URL to shorten" %><br>
+    <%= form.text_field :original_url, required: true, placeholder: "https://example.com" %>
+  </div>
+  <div>
+    <%= form.submit "Shorten URL" %>
+  </div>
+<% end %>
+
+<% if @short_url.present? %>
+  <p style="color: green;">
+    Shortened URL: <%= link_to @short_url, @short_url, target: "_blank" %>
+  </p>
+<% elsif flash[:alert].present? %>
+  <p style="color: red;">
+    <%= flash[:alert] %>
+  </p>
+<% elsif flash[:notice].present? %>
+  <p style="color: green;">
+    <%= flash[:notice] %>
+  </p>
+<% end %>
+
