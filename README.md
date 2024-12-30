@@ -62,9 +62,9 @@ rails db:migrate
 ### 4. Add API Token
 Set a static API token in the Rails configuration:
 
-Add this line to `config/application.rb`:
+Add this line to `config/initializers/api_static_token.rb`:
 ```ruby
-config.api_token = '<your_api_token>'
+Rails.application.config.api_token = '<your_api_token>'
 ```
 
 ### 5. Start the Server
