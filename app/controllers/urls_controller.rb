@@ -1,5 +1,4 @@
 class UrlsController < ApplicationController
-	before_action :authenticate_api_request, only: [:api_create]
 	
   def new
     @url = Url.new
